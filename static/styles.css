@@ -48,9 +48,6 @@ tbody tr:nth-of-type(odd) {
 
 .clock {
     font-size: xx-large;
-<<<<<<< HEAD
-    font-family: Helvetica, Sans-Serif;
-=======
     font-family: Helvetica, Sans-Serif; 
 }
 
@@ -62,5 +59,4 @@ body {
     line-height: 1.5;
     margin: 0;
     text-align: left;
->>>>>>> 59fdae9a8d26e68340f73413f521ae177dae08ab
 }
