@@ -1,7 +1,5 @@
 import os
 
-# add test
-
 from cs50 import SQL
 from flask import Flask, flash, redirect, render_template, request, session
 from flask_session import Session
@@ -26,7 +24,7 @@ app.config["SESSION_TYPE"] = "filesystem"
 Session(app)
 
 # Configure CS50 Library to use SQLite database
-db = SQL("sqlite:///finance.db")
+db = SQL("sqlite:///serenity.db")
 
 # Make sure API key is set
 if not os.environ.get("API_KEY"):
@@ -45,12 +43,6 @@ def after_request(response):
 @app.route("/")
 @login_required
 def index():
-    """Show portfolio of stocks
-    Display HTML table with all stocks owned,
-    number of shares of each stock,
-    total value of each holding.
-    Display user's current cash balance.
-    Display total value of stocks and cash together."""
 
     # Extract all stocks purchased, consolidate number of shares based on symbol
     stocks = db.execute(
