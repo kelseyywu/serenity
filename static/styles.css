@@ -30,11 +30,6 @@ table {
 
 }
 
-.clock {
-    font-size: xx-large;
-    font-family: Helvetica, Sans-Serif;
-}
-
 table th,
 table td {
     padding: 0.5rem;
@@ -53,5 +48,19 @@ tbody tr:nth-of-type(odd) {
 
 .clock {
     font-size: xx-large;
+<<<<<<< HEAD
     font-family: Helvetica, Sans-Serif;
+=======
+    font-family: Helvetica, Sans-Serif; 
+}
+
+body {
+    background-color: #9CAF88;
+    color: #212529;
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.5;
+    margin: 0;
+    text-align: left;
+>>>>>>> 59fdae9a8d26e68340f73413f521ae177dae08ab
 }
