@@ -38,12 +38,11 @@
     }
     </script>
 
-
-    <body onload="startTime()">
-
-        <title>Hello, {% username %}</title>
-
+    <body onload="startTime()" class="clock" style="text-align:center">
         <div id="txt"></div>
+        <br>
+        <h1 style="text-align:center"><i>Have a great day, {{ username }}</i></h1>
+        <br>
     </body>
 
 {% endblock %}
