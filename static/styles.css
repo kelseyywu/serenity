@@ -30,6 +30,11 @@ table {
 
 }
 
+.clock {
+    font-size: xx-large;
+    font-family: Helvetica, Sans-Serif;
+}
+
 table th,
 table td {
     padding: 0.5rem;
