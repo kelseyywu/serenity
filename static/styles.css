@@ -45,3 +45,8 @@ tr {
 tbody tr:nth-of-type(odd) {
     background-color: rgb(179, 208, 255, 0.3)
 }
+
+.clock {
+    font-size: xx-large;
+    font-family: Impact, Charcoal, sans-serif;
+}
