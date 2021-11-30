@@ -1,4 +1,15 @@
 /* Size for brand */
+
+body {
+    background-color: #9CAF88;
+    color: #212529;
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.5;
+    margin: 0;
+    text-align: left;
+}
+
 nav .navbar-brand
 {
     font-size: xx-large;
@@ -47,16 +58,7 @@ tbody tr:nth-of-type(odd) {
 }
 
 .clock {
-    font-size: xx-large;
+    font-size: 72px;
     font-family: Helvetica, Sans-Serif; 
-}
-
-body {
-    background-color: #9CAF88;
-    color: #212529;
-    font-size: 1rem;
-    font-weight: 400;
-    line-height: 1.5;
-    margin: 0;
-    text-align: left;
+    font-weight: bold;
 }

@@ -26,6 +26,9 @@
         let h = today.getHours();
         let m = today.getMinutes();
         let s = today.getSeconds();
+        if (h > 12){
+            h = h - 12;
+        }
         m = checkTime(m);
         s = checkTime(s);
         document.getElementById('txt').innerHTML =  h + ":" + m + ":" + s;
@@ -37,9 +40,9 @@
         return i;
     }
     </script>
-    <body onload="startTime()" class="clock" style="text-align:center">
+    <body onload="startTime()" style="text-align:center">
 
-        <div id="txt"></div>
+        <div id="txt" class="clock"></div>
         <br>
         <h4 style="text-align:center">Have a great day!</h4>
         <br>
