@@ -7,16 +7,13 @@ from tempfile import mkdtemp
 from werkzeug.exceptions import default_exceptions, HTTPException, InternalServerError
 from werkzeug.security import check_password_hash, generate_password_hash
 
-from helpers import apology, login_required, lookup, usd
+from helpers import apology, login_required
 
 # Configure application
 app = Flask(__name__)
 
 # Ensure templates are auto-reloaded
 app.config["TEMPLATES_AUTO_RELOAD"] = True
-
-# Custom filter
-app.jinja_env.filters["usd"] = usd
 
 # Configure session to use filesystem (instead of signed cookies)
 app.config["SESSION_PERMANENT"] = False
@@ -26,6 +23,10 @@ Session(app)
 # Configure CS50 Library to use SQLite database
 db = SQL("sqlite:///serenity.db")
 
+# Make sure API key is set
+# if not os.environ.get("API_KEY"):
+    # raise RuntimeError("API_KEY not set")
+
 @app.after_request
 def after_request(response):
     """Ensure responses aren't cached"""
@@ -34,15 +35,13 @@ def after_request(response):
     response.headers["Pragma"] = "no-cache"
     return response
 
-
 @app.route("/")
 @login_required
 def index():
-
     # Extract all stocks purchased, consolidate number of shares based on symbol
-    username = db.execute("SELECT username FROM users WHERE user_id = ? GROUP BY symbol", session["user_id"])
+    username = db.execute("SELECT username FROM users WHERE id = ?", session["user_id"])
 
-    return render_template("index.html", username = username)
+    return render_template("index.html", username=username)
 
 @app.route("/buy", methods=["GET", "POST"])
 @login_required
