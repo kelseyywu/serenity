@@ -54,7 +54,7 @@ def diary():
         # Validate form submission
         if not request.form.get("entry"):
             return apology("missing entry")
-        if  request.form.get("entry"):
+        elif request.form.get("entry"):
             return apology("missing shares")
         elif not request.form.get("shares").isdigit():
             return apology("invalid shares")
