@@ -56,18 +56,8 @@ def diary():
             return apology("missing entry")
         elif len(request.form.get("entry")) > 500:
             return apology("keep diary entries under 500 characters")
-            
-        '''elif not request.form.get("shares").isdigit():
-            return apology("invalid shares")
-        shares = int(request.form.get("shares"))
-        if not shares:
-            return apology("too few shares")
 
-        # Get stock quote
-        quote = lookup(request.form.get("symbol"))
-        if not quote:
-            return apology("invalid symbol")
-
+        '''
         # Cost to buy
         cost = shares * quote["price"]
 
