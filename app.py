@@ -43,15 +43,15 @@ def index():
 
     return render_template("index.html", username=username)
 
-@app.route("/buy", methods=["GET", "POST"])
+@app.route("/diary", methods=["GET", "POST"])
 @login_required
-def buy():
-        return redirect("/")
+def diary():
+    return redirect("/")
 
 
-@app.route("/history")
+@app.route("/entries")
 @login_required
-def history():
+def entries():
     return redirect("/")
 
 
@@ -102,9 +102,9 @@ def logout():
     return redirect("/")
 
 
-@app.route("/quote", methods=["GET", "POST"])
+@app.route("/quiz", methods=["GET", "POST"])
 @login_required
-def quote():
+def quiz():
         return redirect("/")
 
 
