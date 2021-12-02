@@ -56,7 +56,10 @@ def diary():
             return apology("missing entry")
         elif request.form.get("entry"):
             return apology("missing shares")
-        elif not request.form.get("shares").isdigit():
+        var entry = request.form.get("entry")
+        elif entry.len() < 500
+
+        '''elif not request.form.get("shares").isdigit():
             return apology("invalid shares")
         shares = int(request.form.get("shares"))
         if not shares:
