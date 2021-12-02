@@ -57,8 +57,8 @@ def diary():
         user_id = session["user_id"]
 
         # Validate form submission
-        if not name:
-            return apology("missing name")
+        if not title:
+            return apology("missing title")
         elif not entry:
             return apology("missing entry")
         elif len(entry) > 500:

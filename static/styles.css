@@ -57,7 +57,9 @@ tbody tr:nth-of-type(odd) {
     transform: translate(-50%, -50%);
   }
 
-.journal-label {
+  /* Diary */
+
+  .journal-label {
     display: block;
     line-height: 1.6;
     font-size: 1.2rem;
