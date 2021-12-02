@@ -46,7 +46,56 @@ def index():
 @app.route("/diary", methods=["GET", "POST"])
 @login_required
 def diary():
-    return redirect("/")
+    """Enable user to buy a stock."""
+
+    '''# POST
+    if request.method == "POST":
+
+        # Validate form submission
+        if not request.form.get("symbol"):
+            return apology("missing symbol")
+        elif not request.form.get("shares"):
+            return apology("missing shares")
+        elif not request.form.get("shares").isdigit():
+            return apology("invalid shares")
+        shares = int(request.form.get("shares"))
+        if not shares:
+            return apology("too few shares")
+
+        # Get stock quote
+        quote = lookup(request.form.get("symbol"))
+        if not quote:
+            return apology("invalid symbol")
+
+        # Cost to buy
+        cost = shares * quote["price"]
+
+        # Get user's cash balance
+        rows = db.execute("SELECT cash FROM users WHERE id = :id", id=session["user_id"])
+        if not rows:
+            return apology("missing user")
+        cash = rows[0]["cash"]
+
+        # Ensure user can afford
+        if cash < cost:
+            return apology("can't afford")
+
+        # Record purchase
+        db.execute("""INSERT INTO transactions (user_id, symbol, shares, price)
+            VALUES(:user_id, :symbol, :shares, :price)""",
+                   user_id=session["user_id"], symbol=quote["symbol"], shares=shares, price=quote["price"])
+
+        # Deduct cash
+        db.execute("UPDATE users SET cash = cash - :cost WHERE id = :id",
+                   cost=cost, id=session["user_id"])
+
+        # Display portfolio
+        flash("Bought!")
+
+
+    # GET
+    else:
+        return render_template("diary.html")
 
 
 @app.route("/entries")
