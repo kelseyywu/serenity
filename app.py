@@ -54,14 +54,17 @@ def diary():
 
         # Define variables
         entry = request.form.get("entry")
+        name = request.form.get("name")
         
         # Validate form submission
-        if not entry:
+        if not name:
+            return apology("missing name")
+        elif not entry:
             return apology("missing entry")
         elif len(entry) > 500:
             return apology("keep diary entries under 500 characters")
 
-        diary = db.execute("INSERT INTO diary (user_ID, entry) VALUES(?, ?)", user_id, entry)
+        diary = db.execute("INSERT INTO diary (user_ID, name, entry) VALUES(?, ?, ?)", user_id, name, entry)
 
         session["user_id"] = id
         return redirect("/")
