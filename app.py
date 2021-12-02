@@ -51,10 +51,13 @@ def diary():
     # POST
     if request.method == "POST":
 
+        # Define variables
+        entry = request.form.get("entry")
+
         # Validate form submission
-        if not request.form.get("entry"):
+        if not entry:
             return apology("missing entry")
-        elif len(request.form.get("entry")) > 500:
+        elif len(entry) > 500:
             return apology("keep diary entries under 500 characters")
 
         '''
