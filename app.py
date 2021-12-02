@@ -46,8 +46,9 @@ def index():
 @app.route("/diary", methods=["GET", "POST"])
 @login_required
 def diary():
-    """Enable user to buy a stock."""
-
+    """Enable user to submit a diary entry."""
+    
+    user_id = session["user_id"]
     # POST
     if request.method == "POST":
 
