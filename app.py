@@ -79,6 +79,34 @@ def entries():
     username = db.execute("SELECT username FROM users WHERE id = ?", session["user_id"])
     return render_template("entries.html", username=username)
 
+@app.route("/quiz", methods=["GET", "POST"])
+@login_required
+def quiz():
+    """Enable user to submit answers to mental health quiz."""
+    
+    # POST
+    if request.method == "POST":
+
+        # Define variables
+        entry = request.form.get("entry")
+        entrytitle = request.form.get("entry-title")
+        user_id = session["user_id"]
+
+        # Validate form submission
+        if not title:
+            return apology("missing title")
+        elif not entry:
+            return apology("missing entry")
+        elif len(entry) > 500:
+            return apology("keep diary entries under 500 characters")
+
+        diary = db.execute("INSERT INTO diary (user_ID, entry-title, entry) VALUES(?, ?, ?)", user_id, entrytitle, entry)
+        return redirect("/")
+
+
+    # GET
+    else:
+        return render_template("diary.html")
 
 @app.route("/login", methods=["GET", "POST"])
 def login():
