@@ -20,20 +20,36 @@
         <link href="styles.css" rel="stylesheet">
         <title>diary</title>
     </head>
+
     <body>
         <div class="content">
-            <h1 style="text-align:center"> diary entry </h1>
+            <header><h1 style="text-align:center">diary entry</h1></header>
             <br>
-            <form action="/diary" method="post">
-                <div class="mb-3">
-                    <input autocomplete="off" autofocus class="form-control mx-auto w-auto" name="name" placeholder="name" type="text">
+        <section class="section journal-section">
+            <div class="container">
+            <div class="container-row container-row-journal">
+                <div class="container-item container-item-journal">
+                <form id="entryForm" action="">
+                    <label for="entry-title" class="journal-label">Entry Title</label>
+                    <input
+                    type="text"
+                    name="entry-title"
+                    id="entry-title"
+                    class="entry-text-title"
+                    placeholder="Name of entry ✏️"
+                    />
+                    <label for="entry" class="journal-label">Today's Entry</label>
+                    <textarea
+                    name="daily-entry"
+                    id="entry"
+                    class="entry-text-box"
+                    placeholder="What's on your mind today? 💭"
+                    ></textarea>
+                    <button class="btn-main entry-submit-btn" type="submit">Submit</button>
+                </form>
                 </div>
-                <div class="mb-3">
-                    <input autocomplete="off" autofocus class="form-control mx-auto w-auto" name="entry" placeholder="entry" type="text" size="50">
-                </div>
-                <button class="btn btn-primary" type="submit">submit entry</button>
-            </form>
-        </div>
-    </body>
+            </div>
+            </div>
+        </body>
 </html>
 {% endblock %}
