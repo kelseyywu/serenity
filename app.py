@@ -48,13 +48,13 @@ def index():
 def diary():
     """Enable user to buy a stock."""
 
-    '''# POST
+    # POST
     if request.method == "POST":
 
         # Validate form submission
-        if not request.form.get("symbol"):
-            return apology("missing symbol")
-        elif not request.form.get("shares"):
+        if not request.form.get("entry"):
+            return apology("missing entry")
+        if  request.form.get("entry"):
             return apology("missing shares")
         elif not request.form.get("shares").isdigit():
             return apology("invalid shares")
