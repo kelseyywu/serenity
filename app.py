@@ -76,7 +76,8 @@ def diary():
 @app.route("/entries")
 @login_required
 def entries():
-    return redirect("/")
+    username = db.execute("SELECT username FROM users WHERE id = ?", session["user_id"])
+    return render_template("entries.html", username=username)
 
 
 @app.route("/login", methods=["GET", "POST"])
