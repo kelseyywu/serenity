@@ -89,8 +89,7 @@ def quiz():
         emotion_list = request.form.getlist('emotions')
         emotion_string = ", ".join(emotion_list)
 
-        db.execute("INSERT INTO emotions (user_id, symbol, shares, price) VALUES (?, ?, ?, ?)", 
-        session["user_id"], request.form.get("symbol"), -shares_sold, lookup(request.form.get("symbol"))["price"])
+        db.execute("INSERT INTO emotions (user_id, emotionlist) VALUES (?, ?)", session["user_id"], emotion_string)
 
         return render_template("quizzed.html", emotion_string=emotion_string)
     else:
