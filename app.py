@@ -137,13 +137,6 @@ def logout():
     # Redirect user to login form
     return redirect("/")
 
-
-@app.route("/quiz", methods=["GET", "POST"])
-@login_required
-def quiz():
-    return redirect("/")
-
-
 @app.route("/register", methods=["GET", "POST"])
 def register():
     """Register user
