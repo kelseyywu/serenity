@@ -21,14 +21,16 @@
         <title>diary</title>
     </head>
     <body>
-        <h1 style="text-align:center" class="content"> diary entry </h1>
-        <br>
-        <form action="/diary" method="post">
-            <div class="mb-3">
-                <textarea autocomplete="off" autofocus class="form-control mx-auto w-auto" name="entry" placeholder="entry" type="text" rows="4"> </textarea>
-            </div>
-            <button class="btn btn-primary" type="submit">submit entry</button>
-        </form>
+        <div class="content">
+            <h1 style="text-align:center"> diary entry </h1>
+            <br>
+            <form action="/diary" method="post">
+                <div class="mb-3">
+                    <textarea autocomplete="off" autofocus class="form-control mx-auto w-auto" name="entry" placeholder="entry" type="text" rows="4"> </textarea>
+                </div>
+                <button class="btn btn-primary" type="submit">submit entry</button>
+            </form>
+        </div>
     </body>
 </html>
 {% endblock %}
