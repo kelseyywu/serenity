@@ -105,7 +105,7 @@ def logout():
 @app.route("/quiz", methods=["GET", "POST"])
 @login_required
 def quiz():
-        return redirect("/")
+    return redirect("/")
 
 
 @app.route("/register", methods=["GET", "POST"])
@@ -148,10 +148,10 @@ def register():
         return render_template("register.html")
 
 
-@app.route("/sell", methods=["GET", "POST"])
+@app.route("/suggest", methods=["GET", "POST"])
 @login_required
-def sell():
-        return redirect("/")
+def suggest():
+    return redirect("/")
 
 def errorhandler(e):
     """Handle error"""
