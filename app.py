@@ -86,25 +86,10 @@ def quiz():
     
     # POST
     if request.method == "POST":
-
-        # Define variables
-        emotions = request.form.getlist('emotions')
-
-        # Validate form submission
-        if not title:
-            return apology("missing title")
-        elif not entry:
-            return apology("missing entry")
-        elif len(entry) > 500:
-            return apology("keep diary entries under 500 characters")
-
-        diary = db.execute("INSERT INTO diary (user_ID, entry-title, entry) VALUES(?, ?, ?)", user_id, entrytitle, entry)
+        print(request.form.getlist('emotions'))
         return redirect("/")
-
-
-    # GET
     else:
-        return render_template("diary.html")
+        return render_template("quiz.html")
 
 @app.route("/login", methods=["GET", "POST"])
 def login():
