@@ -88,9 +88,9 @@ def quiz():
     if request.method == "POST":
         emotion_list = request.form.getlist('emotions')
         emotion_string = ",".join(emotion_list)
-        return redirect("/")
+        return render_template("quizzed.html", emotion_string=emotion_string)
     else:
-        return render_template("quiz.html", emotion_string=emotion_string)
+        return render_template("quiz.html")
 
 @app.route("/login", methods=["GET", "POST"])
 def login():
