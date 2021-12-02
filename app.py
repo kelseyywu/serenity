@@ -54,11 +54,9 @@ def diary():
         # Validate form submission
         if not request.form.get("entry"):
             return apology("missing entry")
-        elif request.form.get("entry"):
-            return apology("missing shares")
-        var entry = request.form.get("entry")
-        elif entry.len() < 500
-
+        elif len(request.form.get("entry")) > 500:
+            return apology("keep diary entries under 500 characters")
+            
         '''elif not request.form.get("shares").isdigit():
             return apology("invalid shares")
         shares = int(request.form.get("shares"))
