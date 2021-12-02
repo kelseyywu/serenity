@@ -48,3 +48,11 @@ tbody tr:nth-of-type(odd) {
     font-family: Helvetica, Sans-Serif;
     font-weight: bold;
 }
+
+.content {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+  }
