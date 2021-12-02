@@ -60,6 +60,7 @@ def diary():
         elif len(entry) > 500:
             return apology("keep diary entries under 500 characters")
 
+        
         '''
         
 
