@@ -41,7 +41,7 @@ def index():
     # Extract all stocks purchased, consolidate number of shares based on symbol
     username = db.execute("SELECT username FROM users WHERE id = ?", session["user_id"])
 
-    return render_template("index.html", username=username)
+    return render_template("index.html")
 
 @app.route("/diary", methods=["GET", "POST"])
 @login_required
@@ -77,7 +77,7 @@ def diary():
 @login_required
 def entries():
     username = db.execute("SELECT username FROM users WHERE id = ?", session["user_id"])
-    return render_template("entries.html", username=username)
+    return render_template("entries.html")
 
 @app.route("/quiz", methods=["GET", "POST"])
 @login_required
@@ -90,7 +90,7 @@ def quiz():
         emotion_string = ",".join(emotion_list)
         return redirect("/")
     else:
-        return render_template("quiz.html")
+        return render_template("quiz.html", emotion_string=emotion_string)
 
 @app.route("/login", methods=["GET", "POST"])
 def login():
