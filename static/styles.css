@@ -85,7 +85,3 @@ tbody tr:nth-of-type(odd) {
     border: unset;
     background-color: AliceBlue;
   }
-
-.checkbox {
-    column-count: 2;
-}
