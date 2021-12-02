@@ -94,8 +94,8 @@ def diary():
 
 
     # GET
-    else:
-        return render_template("diary.html")
+    else:'''
+    return render_template("diary.html")
 
 
 @app.route("/entries")
