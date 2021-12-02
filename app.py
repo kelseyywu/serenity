@@ -86,7 +86,8 @@ def quiz():
     
     # POST
     if request.method == "POST":
-        emotions = request.form.getlist('emotions')
+        emotion_list = request.form.getlist('emotions')
+        emotion_string = ",".join(emotion_list)
         return redirect("/")
     else:
         return render_template("quiz.html")
