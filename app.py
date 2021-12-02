@@ -47,7 +47,7 @@ def index():
 @login_required
 def diary():
     """Enable user to submit a diary entry."""
-    
+
     user_id = session["user_id"]
     # POST
     if request.method == "POST":
@@ -61,7 +61,7 @@ def diary():
         elif len(entry) > 500:
             return apology("keep diary entries under 500 characters")
 
-        diary = db.execute("INSERT INTO diary (entry) VALUES(?)", entry)
+        diary = db.execute("INSERT INTO diary (user_ID, entry) VALUES(?, ?)", user_id, entry)
 
         session["user_id"] = id
         return redirect("/")
