@@ -88,9 +88,7 @@ def quiz():
     if request.method == "POST":
 
         # Define variables
-        entry = request.form.get("entry")
-        entrytitle = request.form.get("entry-title")
-        user_id = session["user_id"]
+        emotions = request.form.getlist('emotions')
 
         # Validate form submission
         if not title:
