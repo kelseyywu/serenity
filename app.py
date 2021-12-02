@@ -60,14 +60,15 @@ def diary():
         elif len(entry) > 500:
             return apology("keep diary entries under 500 characters")
 
-        diary = db.execute("INSERT INTO )
-        '''
-        
+        diary = db.execute("INSERT INTO diary (entry) VALUES(?)", entry)
+
+        session["user_id"] = id
+        return redirect("/")
 
 
     # GET
-    else:'''
-    return render_template("diary.html")
+    else:
+        return render_template("diary.html")
 
 
 @app.route("/entries")
