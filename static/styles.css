@@ -73,7 +73,7 @@ tbody tr:nth-of-type(odd) {
     padding: 1em;
     border-radius: 2px;
     border: unset;
-    background-color: lightblue;
+    background-color: AliceBlue;
 }
 
 .entry-text-box {
@@ -83,5 +83,5 @@ tbody tr:nth-of-type(odd) {
     padding: 1em;
     border-radius: 2px;
     border: unset;
-    background-color: lightblue;
+    background-color: AliceBlue;
   }
