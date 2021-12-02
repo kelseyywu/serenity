@@ -47,14 +47,14 @@ def index():
 @login_required
 def diary():
     """Enable user to submit a diary entry."""
-
-    user_id = session["user_id"]
+    
     # POST
     if request.method == "POST":
 
         # Define variables
         entry = request.form.get("entry")
         name = request.form.get("name")
+        user_id = session["user_id"]
         
         # Validate form submission
         if not name:
