@@ -24,6 +24,19 @@
     <body>
         <div class="content">
             <header><h1 style="text-align:center">diary entries</h1></header>
+            <table>
+        
+                <!-- Table of the value of the stock -->
+                <tr>
+                    <th>Stock</th>
+                    <th>Share Price</th>
+                </tr>
+                
+                <tr>
+                    <td>{{ item.name }}</td>
+                    <td>{{ usd(item.price) }}</td>
+                </tr>
+            </table>
         </div>
     </body>
 
