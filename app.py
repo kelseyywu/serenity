@@ -64,7 +64,7 @@ def diary():
         elif len(entry) > 500:
             return apology("keep diary entries under 500 characters")
 
-        diary = db.execute("INSERT INTO diary (user_ID, name, entry) VALUES(?, ?, ?)", user_id, name, entry)
+        diary = db.execute("INSERT INTO diary (user_ID, 'name', entry) VALUES(?, ?, ?)", user_id, name, entry)
         return redirect("/")
 
 
