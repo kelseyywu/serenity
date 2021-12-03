@@ -28,7 +28,7 @@
         let m = today.getMinutes();
         let s = today.getSeconds();
         
-        if (h > 13){
+        if (h >= 13){
             h = h - 12;
         }
         
@@ -45,20 +45,6 @@
     function checkTime(i) {
         if (i < 10) {i = "0" + i};  // add zero in front of numbers < 10
         return i;
-    }
-
-    function greet(){
-        var myDate = new Date();
-        var hrs = myDate.getHours();
-
-        var greet;
-
-        if (hrs < 12)
-            greet = 'Good Morning';
-        else if (hrs >= 12 && hrs <= 17)
-            greet = 'Good Afternoon';
-        else if (hrs >= 17 && hrs <= 24)
-            greet = 'Good Evening';
     }
 
     const numImagesAvailable = 982  //how many photos are total in the collection
