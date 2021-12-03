@@ -1,0 +1,26 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Visualizations
+{% endblock %}
+
+{% block main %}
+    <table>
+        <thead>
+            <tr>
+                <th>Time</th>
+                <th>Emotions</th>
+            </tr>
+        </thead>
+
+        <tbody>
+            {% for e in pastemotions %}
+            <tr>
+                <td>{{ e[["time"]] }}</td>
+                <td>{{ e[["emotionlist"]] }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+
+    </table>
+{% endblock %}

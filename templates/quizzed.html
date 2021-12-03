@@ -6,23 +6,4 @@
 
 {% block main %}
     <p>The emotions you logged most recently are: {{ emotion_string }}</p>
-
-    <table>
-        <thead>
-            <tr>
-                <th>Time</th>
-                <th>Emotions</th>
-            </tr>
-        </thead>
-
-        <tbody>
-            {% for e in pastemotions %}
-            <tr>
-                <td>{{ e[["time"]] }}</td>
-                <td>{{ e[["emotionlist"]] }}</td>
-            </tr>
-            {% endfor %}
-        </tbody>
-
-    </table>
 {% endblock %}
