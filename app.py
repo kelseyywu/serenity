@@ -89,7 +89,9 @@ def quiz():
 
         db.execute("INSERT INTO emotions (user_id, emotionlist) VALUES (?, ?)", session["user_id"], emotion_string)
 
-        return render_template("quizzed.html", emotion_string=emotion_string)
+        pastemotions = db.execute("SELECT time, emotionlist FROM emotions WHERE user_id = ? ORDER BY time DESC", session["user_id"])
+
+        return render_template("quizzed.html", emotion_string=emotion_string, pastemotions=pastemotions)
     else:
         return render_template("quiz.html")
 
