@@ -86,17 +86,16 @@ nav .navbar-brand .blue
     margin: 1em auto;
     padding: 1em;
     border-radius: 2px;
-    border: unset;
-    background-color: AliceBlue;
 }
 
 .entry-text-box {
-    width: 100%;
+    width: 200%;
     height: 20em;
     margin: 1em auto;
     padding: 1em;
     border-radius: 2px;
-    border: unset;
-    background-color: AliceBlue;
   }
-  
+
+.background {
+    background-color: AliceBlue;
+}
