@@ -24,20 +24,26 @@
     <body>
         <header><h1 style="text-align:center">diary entries</h1></header>
             <table class="table table-striped">
-                <thead class="thead-dark">
-                    <th colspan="3">150 Letters</th>
+
+                <thead>
+                    <tr>
+                        <th>Entry Title</th>
+                        <th>Entry</th>
+                        <th>Time</th>
+                    </tr>
                 </thead>
+
                 <tbody>
                     {% for e in entrieslog %}
                         <tr>
-                            <td>{{ entrieslog['entrytitle'] }}</td>
-                            <td>{{ entrieslog['entry'] }}</td>
+                            <td>{{ e["entrytitle"] }}</td>
+                            <td>{{ e["entry"] }}</td>
+                            <td>{{ e["time"] }}</td>
                         </tr>
                     {% endfor %}
                 </tbody>
+
             </table>
-            </div>
-        </div>
     </body>
 
 </html>
