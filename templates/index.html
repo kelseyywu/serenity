@@ -47,12 +47,40 @@
     }
     </script>
     </head>
+
+    <style>
+        #unsplashImage {
+            max-height: 500px;
+            border: 20px solid black;
+        }
+
+        .imageDetails {
+            background-color: black;
+            margin-top: 50pxl
+            padding: 10px;
+            color: white;
+            width: fit-content
+        }
+    </style>
+
     <body onload="startTime()" style="text-align:center">
         <div class="content">
         <div id="txt" class="clock"></div>
         <br>
         <h4 style="text-align:center" >Have a great day!</h4>
         </div>
+
+        <h1>Random Unsplash Image</h1>
+        <div class="imageContainer">
+            <a id="imageLink" href="#">
+                <img alt="" id="unsplashImage"/>
+            </a>
+        </div>
+        <p class="imageDetails">Photo by <a id="creator" href="#">NAME</a> on <a href="https://www.unsplash.com">Unsplash</a>!</p>
+
+        <script>
+            
+        </script>
     </body>
 
 {% endblock %}
