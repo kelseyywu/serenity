@@ -58,10 +58,24 @@
             border: 3px solid white;
         }
 
-        div {
-            width: 100%;
-            margin-bottom: 30px;
-            text-align: center;
+                .grid {
+        display: grid;
+        grid-gap: 10px;
+        grid-template-columns: repeat(5, 1fr);
+        background: #4e4545;
+        max-width: 80%;
+        margin: 50px auto;
+        padding: 10px;
+        }
+
+        .cube {
+        background: darkgray;
+        font-size: 3rem;
+        text-align: center;
+        background-size: cover;
+        background-repeat: no-repeat;
+        opacity: 0;
+        transition: opacity 1.5s ease-in;
         }
     </style>
 
@@ -78,14 +92,16 @@
           <div id="img-container"></div>
         
         <script>
-            const getRandomNum = () => Math.floor(Math.random() * 206)
+            const getRandomNum = () => Math.floor(Math.random() * 99)
+
+            const cubes = document.getElementsByClassName('cube');
 
             for (let item of cubes) {
                 const bgImage = `url('https://source.unsplash.com/collection/466697/${getRandomNum()}')`
                 item.style.backgroundImage = `linear-gradient(
                     rgba(0, 0, 0, 0.55), rgba(0, 0, 0, 0.55)), ${bgImage}`
                 item.style.opacity = 1
-}
+                }
         </script>
     </body>
 
