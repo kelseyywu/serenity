@@ -23,7 +23,8 @@
 
     <body>
         <header><h1 style="text-align:center">diary entries</h1></header>
-            <table class="table table-striped">
+        <br>
+            <table>
 
                 <thead>
                     <tr>
@@ -34,7 +35,7 @@
                 </thead>
 
                 <tbody>
-                    {% for record in records_long %}
+                    {% for e in entrieslog %}
                         <tr>
                             <td>{{ e["entrytitle"] }}</td>
                             <td>{{ e["entry"] }}</td>
