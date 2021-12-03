@@ -22,16 +22,21 @@
     </head>
 
     <body>
-        <div class="content">
-            <header><h1 style="text-align:center">diary entries</h1></header>
-            <br>
-            <section class="section sectionEntryResults" id="entryResultsSection">
-                <div class="container">
-                    <div class="container-row entryResultRow"></div>
-                </div>
-            </section>
-          
-            <script src="index.js"></script>
+        <header><h1 style="text-align:center">diary entries</h1></header>
+            <table class="table table-striped">
+                <thead class="thead-dark">
+                    <th colspan="3">150 Letters</th>
+                </thead>
+                <tbody>
+                    {% for record in records_long: %}
+                        <tr>
+                            <td>{{ diaryentries['entrytitle'] }}</td>
+                            <td>{{ diaryentries['entry'] }}</td>
+                        </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+            </div>
         </div>
     </body>
 
