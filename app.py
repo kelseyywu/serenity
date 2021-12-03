@@ -57,14 +57,14 @@ def diary():
         user_id = session["user_id"]
 
         # Validate form submission
-        if not title:
+        if not entrytitle:
             return apology("missing title")
         elif not entry:
             return apology("missing entry")
         elif len(entry) > 500:
             return apology("keep diary entries under 500 characters")
 
-        diary = db.execute("INSERT INTO diary (user_ID, entry-title, entry) VALUES(?, ?, ?)", user_id, entrytitle, entry)
+        diary = db.execute("INSERT INTO diary (user_id, entry-title, entry) VALUES(?, ?, ?)", user_id, entrytitle, entry)
         return redirect("/")
 
 
