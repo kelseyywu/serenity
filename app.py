@@ -97,8 +97,8 @@ def quiz():
 @login_required
 def viz():
     """User can see results of previous mental health quizzes."""
-    pastemotions = db.execute("SELECT time, emotionlist FROM emotions WHERE user_id = ? ORDER BY time DESC", session["user_id"])
-    return render_template("viz.html", pastemotions=pastemotions)
+    emotions = db.execute("SELECT time, emotionlist FROM emotions WHERE user_id = ? ORDER BY time DESC", session["user_id"])
+    return render_template("viz.html", emotions=emotions)
 
 @app.route("/login", methods=["GET", "POST"])
 def login():
