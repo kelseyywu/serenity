@@ -75,8 +75,9 @@ def diary():
 @app.route("/entries")
 @login_required
 def entries():
-    username = db.execute("SELECT username FROM users WHERE id = ?", session["user_id"])
-    return render_template("entries.html")
+    entrieslog = db.execute(
+        "SELECT entrytitle, entry FROM diaryentries WHERE user_id = ? ORDER BY time DESC", session["user_id"])
+    return render_template("entries.html", entrieslog=entrieslog)
 
 @app.route("/quiz", methods=["GET", "POST"])
 @login_required

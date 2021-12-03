@@ -28,10 +28,10 @@
                     <th colspan="3">150 Letters</th>
                 </thead>
                 <tbody>
-                    {% for record in records_long: %}
+                    {% for e in entrieslog %}
                         <tr>
-                            <td>{{ diaryentries['entrytitle'] }}</td>
-                            <td>{{ diaryentries['entry'] }}</td>
+                            <td>{{ entrieslog['entrytitle'] }}</td>
+                            <td>{{ entrieslog['entry'] }}</td>
                         </tr>
                     {% endfor %}
                 </tbody>
