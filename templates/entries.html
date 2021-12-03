@@ -28,18 +28,18 @@
 
                 <thead>
                     <tr>
+                        <th>Time</th>
                         <th>Entry Title</th>
                         <th>Entry</th>
-                        <th>Time</th>
                     </tr>
                 </thead>
 
                 <tbody>
                     {% for e in entrieslog %}
                         <tr>
+                            <td>{{ e["time"] }}</td>
                             <td>{{ e["entrytitle"] }}</td>
                             <td>{{ e["entry"] }}</td>
-                            <td>{{ e["time"] }}</td>
                         </tr>
                     {% endfor %}
                 </tbody>
