@@ -19,7 +19,7 @@
             <tr>
                 <td>{{ e["time"] }}</td>
                 <td>{{ e["emotionlist"] }}</td>
-                <th>{{ len(e["emotionlist"]) }}</th>
+                <th>{{ string_word_count(e["emotionlist"]) }}</th>
             </tr>
             {% endfor %}
         </tbody>

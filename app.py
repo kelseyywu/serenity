@@ -7,7 +7,7 @@ from tempfile import mkdtemp
 from werkzeug.exceptions import default_exceptions, HTTPException, InternalServerError
 from werkzeug.security import check_password_hash, generate_password_hash
 
-from helpers import apology, login_required
+from helpers import apology, login_required, string_word_count
 
 # Configure application
 app = Flask(__name__)
@@ -99,7 +99,7 @@ def viz():
     """User can see results of previous mental health quizzes."""
     emotionlog = db.execute(
         "SELECT time, emotionlist FROM emotions WHERE user_id = ? ORDER BY time DESC", session["user_id"])
-    return render_template("viz.html", emotionlog=emotionlog, len=len)
+    return render_template("viz.html", emotionlog=emotionlog, string_word_count=string_word_count)
 
 @app.route("/login", methods=["GET", "POST"])
 def login():
