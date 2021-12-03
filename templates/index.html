@@ -46,56 +46,30 @@
         if (i < 10) {i = "0" + i};  // add zero in front of numbers < 10
         return i;
     }
-    
-    function randomImg(width, height) {
-        document.getElementById('img-container').innerHTML = '<img src="https://source.unsplash.com/random/?sunset">';
-        }
-    
-        function GetRandomBackground()
-  {
-    var app_id = 'fGp5SNxIfH11a2eQcd2GuHpEXXyPhgmEVFEOhSxYADc'
-    var url = 'https://api.unsplash.com/photos/random?client_id=' + app_id;    
-    $.ajax({
-      url: url,
-      dataType: 'json',
-      success: function(json) {
-        var src = json.urls.regular;
-        $('#selector').css('background-image','url('+src+')').css('background-size','cover');
-      }
-    });
-  }
-  GetRandomBackground();
+
+    const numImagesAvailable = 988  //how many photos are total in the collection
+    const numItemsToGenerate = 20; //how many photos you want to display
+    const imageWidth = 480;    //image width in pixels
+    const imageHeight = 480;   //image height in pixels
+    const collectionID = 928423  //Beach & Coastal, the collection ID from the original url
+    const galleryContainer = document.querySelector('.gallery-container')
+    function renderGalleryItem(randomNumber){
+        fetch(`https://source.unsplash.com/collection/${collectionID}/${imageWidth}x${imageHeight}/?sig=${randomNumber}`)
+        .then((response) => {
+            let galleryItem = document.createElement('span');
+            galleryItem.classList.add('gallery-item');
+            galleryItem.innerHTML = `<img class="gallery-image" src="${response.url}" alt="gallery image"/>`
+            galleryContainer.append(galleryItem);
+            })
+            }
+            for(let i=0; i < numItemsToGenerate; i++){
+                let randomImageIndex = Math.floor(Math.random() * numImagesAvailable);
+                renderGalleryItem(randomImageIndex);
+                }
     </script>
     </head>
 
-    <style>
-        img {
-            border-radius: 5px;
-            border: 3px solid white;
-        }
-
-                .grid {
-        display: grid;
-        grid-gap: 10px;
-        grid-template-columns: repeat(5, 1fr);
-        background: #4e4545;
-        max-width: 80%;
-        margin: 50px auto;
-        padding: 10px;
-        }
-
-        .cube {
-        background: darkgray;
-        font-size: 3rem;
-        text-align: center;
-        background-size: cover;
-        background-repeat: no-repeat;
-        opacity: 0;
-        transition: opacity 1.5s ease-in;
-        }
-    </style>
-
-    <div id="selector" style="width:100%; height:100%"></div>
+    <div class="gallery-container"></div>
 
     <body onload="startTime()" style="text-align:center">
         <div class="content">
@@ -103,11 +77,7 @@
         <br>
         <h4 style="text-align:center" >Have a great day!</h4>
         </div>
-
-        <div id="button-container">
-            <button onclick="randomImg();">Random image</button>
-          </div>
-          <div id="img-container"></div>
     </body>
+</html>
 
 {% endblock %}
