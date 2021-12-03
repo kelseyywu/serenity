@@ -67,7 +67,6 @@ def diary():
         db.execute("INSERT INTO diary (user_id, entry, entry-title) VALUES(?, ?, ?)", session["user_id"], entry, entrytitle)
         return redirect("/")
 
-
     # GET
     else:
         return render_template("diary.html")
