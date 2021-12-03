@@ -24,27 +24,7 @@
     <body>
         <header><h1 style="text-align:center">suggestions</h1></header>
         <br>
-            <table>
-
-                <thead>
-                    <tr>
-                        <th>Time</th>
-                        <th>Entry Title</th>
-                        <th>Entry</th>
-                    </tr>
-                </thead>
-
-                <tbody>
-                    {% for e in entrieslog %}
-                        <tr>
-                            <td>{{ e["time"] }}</td>
-                            <td>{{ e["entrytitle"] }}</td>
-                            <td>{{ e["entry"] }}</td>
-                        </tr>
-                    {% endfor %}
-                </tbody>
-
-            </table>
+        <p>based on your quiz results, we encourage you to do the following:</p>
     </body>
 
 </html>

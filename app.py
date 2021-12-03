@@ -191,7 +191,7 @@ def register():
 @app.route("/suggest", methods=["GET", "POST"])
 @login_required
 def suggest():
-    return redirect("/")
+    return render_template("suggest.html")
 
 def errorhandler(e):
     """Handle error"""

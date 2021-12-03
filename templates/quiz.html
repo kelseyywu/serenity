@@ -6,7 +6,9 @@
 
 {% block main %}
 
-  <h4>Log emotions you experienced today. Check all that apply:</h4>
+  <header><h1 style="text-align:center">quiz</h1></header>
+  <div class="box-transparent">
+  <h4>log emotions you experienced today. check all that apply:</h4>
 
     <form action="/quiz" method="post" style="text-align:center">
       <input type="checkbox" value="calm" id="calm" name="emotions"> Calm 
@@ -27,6 +29,7 @@
       <br>
       <br>
       <button class="btn btn-primary" type="submit">Save</button>
+    </div>
     </form>
   
 
