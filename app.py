@@ -99,7 +99,7 @@ def viz():
     """User can see results of previous mental health quizzes."""
     emotionlog = db.execute(
         "SELECT time, emotionlist FROM emotions WHERE user_id = ? ORDER BY time DESC", session["user_id"])
-    return render_template("viz.html", emotionlog=emotionlog)
+    return render_template("viz.html", emotionlog=emotionlog, len=len)
 
 @app.route("/login", methods=["GET", "POST"])
 def login():
