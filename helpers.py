@@ -35,4 +35,4 @@ def login_required(f):
     return decorated_function
 
 def string_word_count(s):
-    s.count(",") + 1
+    return s.count(",") + 1
