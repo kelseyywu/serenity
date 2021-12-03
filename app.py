@@ -82,8 +82,7 @@ def entries():
 @login_required
 def quiz():
     """Enable user to submit answers to mental health quiz."""
-    
-    # POST
+
     if request.method == "POST":
         emotion_list = request.form.getlist('emotions')
         emotion_string = ", ".join(emotion_list)
