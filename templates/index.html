@@ -47,7 +47,7 @@
     }
     
     function randomImg(width, height) {
-        document.getElementById('img-container').innerHTML = '<img src="https://source.unsplash.com/random/900x700/?sunset">';
+        document.getElementById('img-container').innerHTML = '<img src="https://source.unsplash.com/random/?sunset">';
         }
     </script>
     </head>
@@ -76,6 +76,17 @@
             <button onclick="randomImg();">Random image</button>
           </div>
           <div id="img-container"></div>
+        
+        <script>
+            const getRandomNum = () => Math.floor(Math.random() * 206)
+
+            for (let item of cubes) {
+                const bgImage = `url('https://source.unsplash.com/collection/466697/${getRandomNum()}')`
+                item.style.backgroundImage = `linear-gradient(
+                    rgba(0, 0, 0, 0.55), rgba(0, 0, 0, 0.55)), ${bgImage}`
+                item.style.opacity = 1
+}
+        </script>
     </body>
 
 {% endblock %}
