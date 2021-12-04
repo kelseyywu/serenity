@@ -101,12 +101,12 @@ nav .navbar-brand .blue
   }
 
 .background {
-    background-color: AliceBlue;
+    background-color: Blue;
 }
 
 .box-transparent {
     font-size: 14px;
-    background-color: rgba(255,255,255, 0.6);
+    background-color: rgba(255,255,255, 0.7);
     border-radius: 25px;
     padding: 20px;
 }
