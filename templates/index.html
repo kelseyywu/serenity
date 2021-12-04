@@ -99,10 +99,29 @@
 
     <body onload="startTime()" style="text-align:center">
         <div class="content">
-        <div id="txt" class="clock"></div>
-        <br>
-        <div class="box-transparent"><h4 style="text-align:center">Have a great day!</h4>
-        </div>
+            <div id="txt" class="clock"></div>
+            <br>
+            <div class="box-transparent">
+                    <h4 style="text-align:center">Have a great day!</h4>
+            </div>
+            
+            <div class="container">
+                <!-- Quote to be Displayed Here -->
+               <h1>
+               <i class="fas fa-quote-left"></i>
+               <span class="quote" id="quote"></span>
+               <i class="fas fa-quote-right"></i>
+               </h1>
+               <!-- Author to be Displayed Here -->
+               <p class="author" id="author"></p>
+   
+               <hr/>
+               <div class="buttons">
+                   <!--Add an onclick event on 'next quote' button. Upon the click of a button, a new random quote is generated-->
+                   <button class="next" onclick="getNewQuote()">Next quote</button>
+               </div>
+           </div>
+   
         </div>
     </body>
 </html>
