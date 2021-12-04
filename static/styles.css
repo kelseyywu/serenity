@@ -105,5 +105,8 @@ nav .navbar-brand .blue
 }
 
 .box-transparent {
-    
+    font-size: 14px;
+    background-color: rgba(255,255,255, 0.6);
+    border-radius: 25px;
+    padding: 20px;
 }
