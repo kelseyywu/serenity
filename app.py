@@ -90,7 +90,7 @@ def quiz():
 
         db.execute("INSERT INTO emotions (user_id, emotionlist) VALUES (?, ?)", session["user_id"], emotion_string)
 
-        return render_template("quizzed.html", emotion_string=emotion_string, pastemotions=pastemotions)
+        return render_template("quizzed.html", emotion_string=emotion_string)
     else:
         return render_template("quiz.html")
 
