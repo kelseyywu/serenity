@@ -103,9 +103,3 @@ nav .navbar-brand .blue
 .background {
     background-color: AliceBlue;
 }
-
-.hover:hover {
-  background-color: lightyellow; 
-  border: 1px gray solid; 
-  width: 12em; 
-}
