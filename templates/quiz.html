@@ -8,24 +8,30 @@
   <body class="background">
     <header><h1 style="text-align:center">Quiz</h1></header>
     <div class="box-transparent">
+      
     <h4>Log emotions you experienced today. check all that apply:</h4>
-
-      <form action="/quiz" method="post" style="text-align:center">
-        <input type="checkbox" value="calm" id="calm" name="emotions"> Calm 
-        <br>
-        <input type="checkbox" value="stressed" id="stressed" name="emotions"> Stressed
-        <br>
-        <input type="checkbox" value="motivated" id="motivated" name="emotions"> Motivated
-        <br>
-        <input type="checkbox" value="content" id="content" name="emotions"> Content
-        <br>
-        <input type="checkbox" value="bored" id="bored" name="emotions"> Bored
-        <br>
-        <input type="checkbox" value="anxious" id="anxious" name="emotions"> Anxious
-        <br>
-        <input type="checkbox" value="tired" id="tired" name="emotions"> Tired
-        <br>
-        <input type="checkbox" value="nervous" id="nervous" name="emotions"> Nervous
+    <form action="/quiz" method="post" style="text-align:center">  
+      <div class="row">
+        <div class="column">
+          <input type="checkbox" value="calm" id="calm" name="emotions"> Calm 
+          <br>
+          <input type="checkbox" value="stressed" id="stressed" name="emotions"> Stressed
+          <br>
+          <input type="checkbox" value="motivated" id="motivated" name="emotions"> Motivated
+          <br>
+          <input type="checkbox" value="content" id="content" name="emotions"> Content
+          <br>
+        </div>
+        <div class="column">
+          <input type="checkbox" value="anxious" id="anxious" name="emotions"> Anxious
+          <br>
+          <input type="checkbox" value="tired" id="tired" name="emotions"> Tired
+          <br>
+          <input type="checkbox" value="nervous" id="nervous" name="emotions"> Nervous
+          <br>
+          <input type="checkbox" value="bored" id="bored" name="emotions"> Bored
+        </div>
+      </div>
         <br>
         <br>
         <button class="btn btn-primary" type="submit">Save</button>
