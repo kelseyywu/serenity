@@ -69,12 +69,12 @@
     function quote(){
         // creates inspirational quotes
         let quotes = [];
-        quotes.push("Write it. Shoot it. Publish it. \n Crochet it, sauté it, whatever. MAKE. – Joss Whedon");
-        quotes.push("It’s no use going back to yesterday, because \n I was a different person then. ― Lewis Carroll");
-        quotes.push("Do what you feel in your heart to be right – for you’ll be \n criticized anyway. ― Eleanor Roosevelt");
-        quotes.push("Happiness is not something ready made. \n It comes from your own actions. ― Dalai Lama XIV");
-        quotes.push("People who wonder if the glass is half \n empty or full miss the point. The glass is refillable. – Unknown");
-        quotes.push("I now tried a new hypothesis: It was possible that I was more \n in charge of my happiness than I was allowing myself to be. – Michelle Obama");
+        quotes.push("Write it. Shoot it. Publish it. Crochet it, sauté it, whatever. MAKE. – Joss Whedon");
+        quotes.push("It’s no use going back to yesterday, because I was a different person then. ― Lewis Carroll");
+        quotes.push("Do what you feel in your heart to be right – for you’ll be criticized anyway. ― Eleanor Roosevelt");
+        quotes.push("Happiness is not something ready made. It comes from your own actions. ― Dalai Lama XIV");
+        quotes.push("People who wonder if the glass is half empty or full miss the point. The glass is refillable. – Unknown");
+        quotes.push("I now tried a new hypothesis: It was possible that I was more in charge of my happiness than I was allowing myself to be. – Michelle Obama");
 
         // Uses a random number generator to get a random quote from the array
         let random_quote = quotes[Math.floor(Math.random()*quotes.length)];
@@ -107,6 +107,47 @@
         padding: 20px;
         border-radius: 25px;
         }
+
+            .button {
+        appearance: none;
+        background-color: #000000;
+        border: 2px solid #1A1A1A;
+        border-radius: 15px;
+        box-sizing: border-box;
+        color: #FFFFFF;
+        cursor: pointer;
+        display: inline-block;
+        font-size: 16px;
+        font-weight: 600;
+        line-height: normal;
+        margin: 0;
+        min-height: 60px;
+        min-width: 0;
+        outline: none;
+        padding: 16px 24px;
+        text-align: center;
+        text-decoration: none;
+        transition: all 300ms cubic-bezier(.23, 1, 0.32, 1);
+        user-select: none;
+        -webkit-user-select: none;
+        touch-action: manipulation;
+        width: 100%;
+        will-change: transform;
+        }
+
+        .button:disabled {
+        pointer-events: none;
+        }
+
+        .button:hover {
+        box-shadow: rgba(0, 0, 0, 0.25) 0 8px 15px;
+        transform: translateY(-2px);
+        }
+
+        .button:active {
+        box-shadow: none;
+        transform: translateY(0);
+        }
     </style>
     </head>
 
@@ -118,7 +159,8 @@
             <br>
             <div class="box-transparent">
                     <h4 style="text-align:center">Have a great day!</h4>
-                    <button id="quote" onclick="quote()">Click for a random inspirational quote.</button>
+                    <br>
+                    <button class="button" id="quote" onclick="quote()">Click for a random inspirational quote.</button>
             </div>
 
         </div>
