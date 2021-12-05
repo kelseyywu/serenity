@@ -69,16 +69,16 @@
     function quote(){
         // creates inspirational quotes
         let quotes = [];
-        quotes.push("Kelsey owns a bamboo in her dorm and is looking for name suggestions.");
-        quotes.push("Kelsey loves curating Spotify playlists.");
-        quotes.push("Kelsey's favorite food is soup noodles and loves cooking with her suitemates.");
-        quotes.push("Kelsey lives on the fifth floor of Eliot.");
-        quotes.push("Kelsey sings with the Harvard-Radcliffe Veritones (shoutout to a cappella folks)!");
-        quotes.push("Kelsey's suitemates host watch parties for the Bachelorette every week.");
+        quotes.push("Write it. Shoot it. Publish it. \n Crochet it, sauté it, whatever. MAKE. – Joss Whedon");
+        quotes.push("It’s no use going back to yesterday, because \n I was a different person then. ― Lewis Carroll");
+        quotes.push("Do what you feel in your heart to be right – for you’ll be \n criticized anyway. ― Eleanor Roosevelt");
+        quotes.push("Happiness is not something ready made. \n It comes from your own actions. ― Dalai Lama XIV");
+        quotes.push("People who wonder if the glass is half \n empty or full miss the point. The glass is refillable. – Unknown");
+        quotes.push("I now tried a new hypothesis: It was possible that I was more \n in charge of my happiness than I was allowing myself to be. – Michelle Obama");
 
         // Uses a random number generator to get a random quote from the array
-        let random_quote = facts[Math.floor(Math.random()*quotes.length)];
-        document.getElementById("fact").innerHTML = random_quote;
+        let random_quote = quotes[Math.floor(Math.random()*quotes.length)];
+        document.getElementById("quote").innerHTML = random_quote;
     };
     </script>
 
@@ -118,7 +118,7 @@
             <br>
             <div class="box-transparent">
                     <h4 style="text-align:center">Have a great day!</h4>
-                    <button id="fact" onclick="fact()">Click for a random fact about Kelsey!</button>
+                    <button id="quote" onclick="quote()">Click for a random inspirational quote.</button>
             </div>
 
         </div>
