@@ -5,25 +5,29 @@
 {% endblock %}
 
 {% block main %}
-    <header><h1 style="text-align:center">how have you been feeling?</h1></header>
-    <table class="styled-table">
-        <thead>
-            <tr>
-                <th>Time</th>
-                <th>Emotions</th>
-                <th>Number of Emotions Logged</th>
-            </tr>
-        </thead>
+    <body class="background">
 
-        <tbody>
-            {% for e in emotionlog %}
-            <tr>
-                <td>{{ e["time"] }}</td>
-                <td>{{ e["emotionlist"] }}</td>
-                <th>{{ string_word_count(e["emotionlist"]) }}</th>
-            </tr>
-            {% endfor %}
-        </tbody>
+        <header><h1 style="text-align:center">How have you been feeling?</h1></header>
+        <br>
+        <table class="styled-table">
+            <thead>
+                <tr>
+                    <th>Time</th>
+                    <th>Emotions</th>
+                    <th>Number of Emotions Logged</th>
+                </tr>
+            </thead>
 
-    </table>
+            <tbody>
+                {% for e in emotionlog %}
+                <tr>
+                    <td>{{ e["time"] }}</td>
+                    <td>{{ e["emotionlist"] }}</td>
+                    <th>{{ string_word_count(e["emotionlist"]) }}</th>
+                </tr>
+                {% endfor %}
+            </tbody>
+
+        </table>
+    </body>
 {% endblock %}
