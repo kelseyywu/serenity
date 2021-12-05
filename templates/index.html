@@ -65,6 +65,21 @@
         let randomImageIndex = Math.floor(Math.random() * numImagesAvailable);
     renderGalleryItem(randomImageIndex);
     }
+
+    function quote(){
+        // creates inspirational quotes
+        let quotes = [];
+        quotes.push("Kelsey owns a bamboo in her dorm and is looking for name suggestions.");
+        quotes.push("Kelsey loves curating Spotify playlists.");
+        quotes.push("Kelsey's favorite food is soup noodles and loves cooking with her suitemates.");
+        quotes.push("Kelsey lives on the fifth floor of Eliot.");
+        quotes.push("Kelsey sings with the Harvard-Radcliffe Veritones (shoutout to a cappella folks)!");
+        quotes.push("Kelsey's suitemates host watch parties for the Bachelorette every week.");
+
+        // Uses a random number generator to get a random quote from the array
+        let random_quote = facts[Math.floor(Math.random()*quotes.length)];
+        document.getElementById("fact").innerHTML = random_quote;
+    };
     </script>
 
     <style>
