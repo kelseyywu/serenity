@@ -93,7 +93,7 @@ nav .navbar-brand .blue
 }
 
 .entry-text-box {
-    width: 100%;
+    width: 20em;
     height: 20em;
     margin: 1em auto;
     padding: 1em;
@@ -145,7 +145,7 @@ nav .navbar-brand .blue
     user-select: none;
     -webkit-user-select: none;
     touch-action: manipulation;
-    width: 500px;
+    width: 20em;
     will-change: transform;
 }
 
