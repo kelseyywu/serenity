@@ -91,7 +91,7 @@ def quiz():
         stressslider = request.form.get('stressslider')
         happinessslider = request.form.get('happinessslider')
 
-        db.execute("INSERT INTO emotions (user_id, emotionlist, stress_slider) VALUES (?, ?, ?)", session["user_id"], emotion_string, stressslider, happinessslider)
+        db.execute("INSERT INTO emotions (user_id, emotionlist, stress_slider, happiness_slider) VALUES (?, ?, ?, ?)", session["user_id"], emotion_string, stressslider, happinessslider)
 
         return render_template("quizzed.html", emotion_string=emotion_string)
     else:
