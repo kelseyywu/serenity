@@ -88,11 +88,11 @@ def quiz():
         emotion_list = request.form.getlist('emotions')
         emotion_string = ", ".join(emotion_list)
 
-        stressslider = request.form["stressslider"]
+        stressslider = request.form["stress_slider"]
 
-        db.execute("INSERT INTO emotions (user_id, emotionlist) VALUES (?, ?)", session["user_id"], emotion_string)
+        db.execute("INSERT INTO emotions (user_id, emotionlist, stress_slider) VALUES (?, ?, ?)", session["user_id"], emotion_string, stressslider)
 
-        return render_template("quizzed.html", emotion_string=emotion_string)
+        return render_template("quizzed.html", emotion_string=emotion_string, stressslider=stressslider)
     else:
         return render_template("quiz.html")
 
