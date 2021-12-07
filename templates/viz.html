@@ -14,7 +14,8 @@
                 <tr>
                     <th>Time</th>
                     <th>Emotions</th>
-                    <th>Number of Emotions Logged</th>
+                    <th># of Emotions Logged</th>
+                    <th>Stress Level</th>
                 </tr>
             </thead>
 
@@ -23,7 +24,8 @@
                 <tr>
                     <td>{{ e["time"] }}</td>
                     <td>{{ e["emotionlist"] }}</td>
-                    <th>{{ string_word_count(e["emotionlist"]) }}</th>
+                    <td>{{ string_word_count(e["emotionlist"]) }}</td>
+                    <td>{{ e["stress_slider"] }}</td>
                 </tr>
                 {% endfor %}
             </tbody>
