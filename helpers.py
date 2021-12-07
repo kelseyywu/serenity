@@ -33,6 +33,3 @@ def login_required(f):
             return redirect("/login")
         return f(*args, **kwargs)
     return decorated_function
-
-def string_word_count(s):
-    return s.count(",") + 1
