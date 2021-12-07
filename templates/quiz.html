@@ -93,12 +93,12 @@
           <input type="range" name="stressslider" min="0" max="10" class="slider" value="5" id="stressrange">
           <p>Value: <span id="stresslevel" name="stresslevel"></span></p>
           <script>
-            var slider = document.getElementById("stressrange");
-            var output = document.getElementById("stresslevel");
-            output.innerHTML = slider.value;
+            var slider1 = document.getElementById("stressrange");
+            var output1 = document.getElementById("stresslevel");
+            output1.innerHTML = slider1.value;
             
-            slider.oninput = function() {
-              output.innerHTML = this.value;
+            slider1.oninput = function() {
+              output1.innerHTML = this.value;
             }
             </script>
         </div>
@@ -107,14 +107,14 @@
           <br>
           <h4>On a scale from 0 to 10, what is your happiness level today?</h4>
           <input type="range" name="happinessslider" min="0" max="10" class="slider" value="5" id="happinessrange">
-          <p>Value: <span id="happinesslevel"></span></p>
+          <p>Value: <span id="happinesslevel" name="happinesslevel"></span></p>
           <script>
-            var slider = document.getElementById("happinessrange");
-            var output = document.getElementById("happinesslevel");
-            output.innerHTML = slider.value;
+            var slider2 = document.getElementById("stressrange");
+            var output2 = document.getElementById("stresslevel");
+            output2.innerHTML = slider2.value;
             
-            slider.oninput = function() {
-              output.innerHTML = this.value;
+            slider2.oninput = function() {
+              output2.innerHTML = this.value;
             }
             </script>
         </div>
