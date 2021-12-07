@@ -89,10 +89,11 @@ def quiz():
         emotion_string = ", ".join(emotion_list)
 
         stressslider = request.form.get('stressslider')
+        happinessslider = request.form.get('happinessslider')
 
-        db.execute("INSERT INTO emotions (user_id, emotionlist, stress_slider) VALUES (?, ?, ?)", session["user_id"], emotion_string, stressslider)
+        db.execute("INSERT INTO emotions (user_id, emotionlist, stress_slider) VALUES (?, ?, ?)", session["user_id"], emotion_string, stressslider, happinessslider)
 
-        return render_template("quizzed.html", emotion_string=emotion_string, stressslider=stressslider)
+        return render_template("quizzed.html", emotion_string=emotion_string)
     else:
         return render_template("quiz.html")
 
@@ -101,7 +102,7 @@ def quiz():
 def viz():
     """User can see results of previous mental health quizzes."""
     emotionlog = db.execute(
-        "SELECT time, emotionlist FROM emotions WHERE user_id = ? ORDER BY time DESC", session["user_id"])
+        "SELECT time, emotionlist, stress_slider, happiness_slider FROM emotions WHERE user_id = ? ORDER BY time DESC", session["user_id"])
     return render_template("viz.html", emotionlog=emotionlog, string_word_count=string_word_count)
 
 @app.route("/login", methods=["GET", "POST"])

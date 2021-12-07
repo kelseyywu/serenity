@@ -16,6 +16,7 @@
                     <th>Emotions</th>
                     <th># of Emotions Logged</th>
                     <th>Stress Level</th>
+                    <th>Happiness Level</th>
                 </tr>
             </thead>
 
@@ -26,6 +27,7 @@
                     <td>{{ e["emotionlist"] }}</td>
                     <td>{{ string_word_count(e["emotionlist"]) }}</td>
                     <td>{{ e["stress_slider"] }}</td>
+                    <td>{{ e["happiness_slider"] }}</td>
                 </tr>
                 {% endfor %}
             </tbody>
