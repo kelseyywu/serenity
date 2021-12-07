@@ -15,9 +15,9 @@
         .slider {
           -webkit-appearance: none;  /* Override default CSS styles */
           appearance: none;
-          width: 100%; /* Full-width */
+          width: 80%; /* Full-width */
           height: 25px; /* Specified height */
-          background: #d3d3d3; /* Grey background */
+          background: #FFFFFF;
           outline: none; /* Remove outline */
           opacity: 0.7; /* Set transparency (for mouse-over effects on hover) */
           -webkit-transition: .2s; /* 0.2 seconds transition on hover */
@@ -81,9 +81,13 @@
           </div>
         </div>
 
+        <br>
+        <br>
+
         <div class="slidecontainer">
           <h4>On a scale from 1 to 10, what is your stress level today?</h4>
-          <input type="range" min="1" max="10" class="slider" id="myRange">
+          <input type="range" min="1" max="10" class="slider" value="5" id="myRange">
+          <p>Value: <span id="demo"></span></p>
         </div>
 
       </div>
@@ -92,6 +96,7 @@
         <button class="button" type="submit">Save</button>
       </div>
       </form>
+
     </body>
 
 {% endblock %}
