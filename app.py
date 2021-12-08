@@ -87,12 +87,20 @@ def quiz():
 
     # Check for POST
     if request.method == "POST":
+
+        # Get list of emotions submitted via the checkbox
         emotion_list = request.form.getlist('emotions')
+
+        # Convert list to string
         emotion_string = ", ".join(emotion_list)
 
+        # Get value from stress slider
         stressslider = request.form.get('stressslider')
+
+        # Get value from happiness slider
         happinessslider = request.form.get('happinessslider')
 
+        # Insert submission into SQL
         db.execute("INSERT INTO emotions (user_id, emotionlist, stress_slider, happiness_slider) VALUES (?, ?, ?, ?)", session["user_id"], emotion_string, stressslider, happinessslider)
 
         return render_template("quizzed.html", emotion_string=emotion_string)
@@ -105,8 +113,11 @@ def quiz():
 @login_required
 def viz():
     """User can see results of previous mental health quizzes."""
+
+    # Select all information from emotions table
     emotionlog = db.execute(
         "SELECT time, emotionlist, stress_slider, happiness_slider FROM emotions WHERE user_id = ? ORDER BY time DESC", session["user_id"])
+
     return render_template("viz.html", emotionlog=emotionlog, string_word_count=string_word_count)
 
 @app.route("/login", methods=["GET", "POST"])

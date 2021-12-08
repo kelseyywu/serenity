@@ -54,13 +54,18 @@
   <body class="background">
     <header><h1 style="text-align:center">Quiz</h1></header>
     <div class="box-transparent">
-      
-    <h4>Log emotions you experienced today. Check all that apply:</h4>
-    <form action="/quiz" method="post" style="text-align:center">  
+
+
+      <!--Create quiz-->
+      <h4>Log emotions you experienced today. Check all that apply:</h4>
+
+      <form action="/quiz" method="post" style="text-align:center">  
 
       <div class="row">
 
         <div class="column" style="text-align:center">
+
+          <!--Create first column of checkboxes-->
           <div style="display: inline-block; text-align: left;">
             <br>
             <input type="checkbox" value="calm" id="calm" name="emotions"> Calm 
@@ -75,6 +80,8 @@
         </div>
 
         <div class="column" style="text-align:center">
+
+          <!--Create second column of checkboxes-->
           <div style="display: inline-block; text-align: left;">
             <br>
             <input type="checkbox" value="anxious" id="anxious" name="emotions"> Anxious
@@ -87,11 +94,14 @@
           </div>
         </div>
 
+        <!--Create slider for stress level-->
         <div class="slidecontainer">
           <br>
           <h4>On a scale from 0 to 10, what is your stress level today?</h4>
           <input type="range" name="stressslider" min="0" max="10" class="slider" value="5" id="stressrange">
           <p>Value: <span id="stresslevel" name="stresslevel"></span></p>
+
+          <!--Script to print value-->
           <script>
             var slider1 = document.getElementById("stressrange");
             var output1 = document.getElementById("stresslevel");
@@ -103,11 +113,14 @@
             </script>
         </div>
 
+        <!--Create slider for stress level-->
         <div class="slidecontainer">
           <br>
           <h4>On a scale from 0 to 10, what is your happiness level today?</h4>
           <input type="range" name="happinessslider" min="0" max="10" class="slider" value="5" id="happinessrange">
           <p>Value: <span id="happinesslevel" name="happinesslevel"></span></p>
+
+          <!--Script to print value-->
           <script>
             var slider2 = document.getElementById("happinessrange");
             var output2 = document.getElementById("happinesslevel");
@@ -122,6 +135,7 @@
       </div>
         <br>
         <br>
+        <!--Submission button-->
         <button class="button" type="submit" value="submit">Save</button>
       </div>
 

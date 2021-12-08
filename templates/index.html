@@ -50,6 +50,8 @@
     const collectionID = 1155333
 
     const galleryContainer = document.querySelector('.gallery-container')
+
+    /* Create background with random Unsplash photo */
     function renderGalleryItem(randomNumber){
     fetch(`https://source.unsplash.com/collection/${collectionID}/?sig=${randomNumber}`)
         .then((response) => {
