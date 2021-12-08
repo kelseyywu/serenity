@@ -8,7 +8,7 @@
 <!DOCTYPE html>
 <html lang="en">
     <head>
-        <title>diary</title>
+        <title>Diary Entries</title>
     </head>
 
     <body class="background">
@@ -27,6 +27,8 @@
                 <tbody>
                     {% for e in entrieslog %}
                         <tr>
+
+                            <!-- Tabulate through every entry -->
                             <td>{{ e["time"] }}</td>
                             <td>{{ e["entrytitle"] }}</td>
                             <td>{{ e["entry"] }}</td>

@@ -8,26 +8,18 @@
 <!DOCTYPE html>
 <html lang="en">
     <head>
-        <!-- Links to relevant Boostrap and CSS files. -->
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" 
-        integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
-        <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" 
-        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js" 
-        integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous"></script>
-        <link href="styles.css" rel="stylesheet">
         <title>Homepage</title>
-
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js" type="text/javascript"></script>
+    
     <script>
+    
+    /* Creates the clock feature */
     function startTime() {
         const today = new Date();
         let h = today.getHours();
         let m = today.getMinutes();
         let s = today.getSeconds();
         
+        /* Corrects to make it non-military time */
         if (h >= 13){
             h = h - 12;
         }
@@ -43,14 +35,23 @@
     }
 
     function checkTime(i) {
-        if (i < 10) {i = "0" + i};  // add zero in front of numbers < 10
+        /* Add zero in front of numbers < 10 */
+        if (i < 10) {i = "0" + i};
         return i;
     }
 
-    const numImagesAvailable = 982  //how many photos are total in the collection
-    const numItemsToGenerate = 1; //how many photos you want to display
-    const collectionID = 1155333   //the collection ID from the original url
+    /* How many photos are total in the collection */
+    const numImagesAvailable = 982
+
+    /* How many photos you want to display */
+    const numItemsToGenerate = 1;
+
+    /* The collection ID from the original url */
+    const collectionID = 1155333
+
     const galleryContainer = document.querySelector('.gallery-container')
+
+    /* Create background with random Unsplash photo */
     function renderGalleryItem(randomNumber){
     fetch(`https://source.unsplash.com/collection/${collectionID}/?sig=${randomNumber}`)
         .then((response) => {
@@ -61,13 +62,14 @@
         document.body.style.backgroundSize = "cover"
         })
     }
+
     for(let i=0; i < numItemsToGenerate; i++){
         let randomImageIndex = Math.floor(Math.random() * numImagesAvailable);
     renderGalleryItem(randomImageIndex);
     }
 
+    /* Creates an inspiration quote */
     function quote(){
-        // creates inspirational quotes
         let quotes = [];
         quotes.push("Write it. Shoot it. Publish it. Crochet it, sauté it, whatever. MAKE. – Joss Whedon");
         quotes.push("It’s no use going back to yesterday, because I was a different person then. ― Lewis Carroll");
@@ -79,12 +81,13 @@
         quotes.push("Work hard in silence, let your success be the noise. – Frank Ocean");
         quotes.push("Work hard, be kind, and amazing things will happen. – Conan O’Brien");
 
-        // Uses a random number generator to get a random quote from the array
+        /* Uses a random number generator to get a random quote from the array */
         let random_quote = quotes[Math.floor(Math.random()*quotes.length)];
         document.getElementById("quote").innerHTML = random_quote;
     };
     </script>
 
+    <!-- Styles for our mainpage -->
     <style>
         .gallery-container {
         width: 100vw;
@@ -115,19 +118,26 @@
 
     <div class="gallery-container"></div>
 
+    <!-- Load functions that create the clock -->
     <body onload="startTime()" style="text-align:center">
         <div class="content">
+            
+            <!-- Create the clock -->
             <div id="txt" class="clock"></div>
             <br>
             <div class="box-transparent">
                 <h4 style="text-align:center">Have a great day!</h4>
+
+                <!-- Create the quote generator button -->
                 <button class="button" id="quote" onclick="quote()">Here's your daily inspirational quote.</button>
                 <br>
                 <br>
+
+                <!-- Upload the weather fidget -->
                 <h4 style="text-align:center">Weather:</h4>
                 <a target="_blank" href="https://www.booked.net/weather/cambridge-3259">
                     <img src="https://w.bookcdn.com/weather/picture/26_3259_0_1_34495e_250_2c3e50_ffffff_ffffff_1_2071c9_ffffff_0_6.png?scode=124&domid=w209&anc_id=94744"  alt="booked.net"/>
-                </a><!-- weather widget end -->
+                </a>
             </div>
         </div>
     </body>
