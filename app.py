@@ -23,10 +23,6 @@ Session(app)
 # Configure CS50 Library to use SQLite database
 db = SQL("sqlite:///serenity.db")
 
-# Make sure API key is set
-# if not os.environ.get("API_KEY"):
-    # raise RuntimeError("API_KEY not set")
-
 @app.after_request
 def after_request(response):
     """Ensure responses aren't cached"""
@@ -38,7 +34,8 @@ def after_request(response):
 @app.route("/")
 @login_required
 def index():
-    # Extract all stocks purchased, consolidate number of shares based on symbol
+
+    # Check to make sure the user is logged in.
     username = db.execute("SELECT username FROM users WHERE id = ?", session["user_id"])
 
     return render_template("index.html")
@@ -48,7 +45,7 @@ def index():
 def diary():
     """Enable user to submit a diary entry."""
     
-    # POST
+    # Check for POST
     if request.method == "POST":
 
         # Define variables
@@ -64,10 +61,11 @@ def diary():
         elif len(entry) > 500:
             return apology("keep diary entries under 500 characters")
 
+        # Insert into SQL table
         db.execute("INSERT INTO diaryentries (user_id, entry, entrytitle) VALUES(?, ?, ?)", session["user_id"], entry, entrytitle)
         return redirect("/")
 
-    # GET
+    # Check for GET
     else:
         return render_template("diary.html")
 
@@ -75,6 +73,8 @@ def diary():
 @app.route("/entries")
 @login_required
 def entries():
+
+    # Input diary values into the table
     entrieslog = db.execute(
         "SELECT entrytitle, entry, time FROM diaryentries WHERE user_id = ? ORDER BY time DESC", session["user_id"])
     return render_template("entries.html", entrieslog=entrieslog)
@@ -82,8 +82,10 @@ def entries():
 @app.route("/quiz", methods=["GET", "POST"])
 @login_required
 def quiz():
+
     """Enable user to submit answers to mental health quiz."""
 
+    # Check for POST
     if request.method == "POST":
         emotion_list = request.form.getlist('emotions')
         emotion_string = ", ".join(emotion_list)
@@ -94,6 +96,8 @@ def quiz():
         db.execute("INSERT INTO emotions (user_id, emotionlist, stress_slider, happiness_slider) VALUES (?, ?, ?, ?)", session["user_id"], emotion_string, stressslider, happinessslider)
 
         return render_template("quizzed.html", emotion_string=emotion_string)
+
+    # Check for GET
     else:
         return render_template("quiz.html")
 
@@ -153,12 +157,7 @@ def logout():
 
 @app.route("/register", methods=["GET", "POST"])
 def register():
-    """Register user
-    When requested via GET, display registration form
-    When form is submitted via POST, check for possible errors and insert new user
-    into users table.
-    Log user in.
-    """
+
     if request.method == "POST":
 
         # Ensure username was submitted

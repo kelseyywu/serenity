@@ -116,20 +116,26 @@
 
     <div class="gallery-container"></div>
 
-    <!-- Unload startTime() -->
+    <!-- Load functions that create the clock -->
     <body onload="startTime()" style="text-align:center">
         <div class="content">
+            
+            <!-- Create the clock -->
             <div id="txt" class="clock"></div>
             <br>
             <div class="box-transparent">
                 <h4 style="text-align:center">Have a great day!</h4>
+
+                <!-- Create the quote generator button -->
                 <button class="button" id="quote" onclick="quote()">Here's your daily inspirational quote.</button>
                 <br>
                 <br>
+
+                <!-- Upload the weather fidget -->
                 <h4 style="text-align:center">Weather:</h4>
                 <a target="_blank" href="https://www.booked.net/weather/cambridge-3259">
                     <img src="https://w.bookcdn.com/weather/picture/26_3259_0_1_34495e_250_2c3e50_ffffff_ffffff_1_2071c9_ffffff_0_6.png?scode=124&domid=w209&anc_id=94744"  alt="booked.net"/>
-                </a><!-- weather widget end -->
+                </a>
             </div>
         </div>
     </body>
