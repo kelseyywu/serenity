@@ -8,17 +8,23 @@
 <!DOCTYPE html>
 <html lang="en">
     <head>
-        <title>diary</title>
+        <title>Diary</title>
     </head>
 
     <body class="background">
             <header><h1 style="text-align:center">Diary Entry</h1></header>
             <br>
+                <!-- Form to submit diary entry -->
             <form id="entryForm" action="/diary" method="post">
+
+                <!-- Label for entry title -->
                 <label for="entry-title" class="journal-label">entry title</label>
                 <input type="text" name="entry-title" id="entry-title" class="entry-text-title" placeholder="Title"/>
+
+                <!-- Label for entry -->
                 <label for="entry" class="journal-label">today's entry</label>
                 <textarea name="entry" id="entry" class="entry-text-box" placeholder="What's on your mind today?"></textarea>
+
                 <br>
                 <button class="button" type="submit">submit entry</button>
             </form>
