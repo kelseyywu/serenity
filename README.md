@@ -30,3 +30,6 @@ Based on the quiz results, our page will give feedback to users to promote a hea
 
 Log Out
 When logged in, click on the "Log Out" link in the navigation bar to log out. You will be redirected to the login page.
+
+Video:
+https://youtu.be/uaa_oZQq8Dc
